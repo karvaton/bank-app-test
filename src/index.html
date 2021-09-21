@@ -7,18 +7,42 @@
     <title>BankApp</title>
 </head>
 <body>
-    <div id="add-bank">
+    <aside>
+        <nav>
+            <li class="bank-management">Bank management</li>
+            <li class="mortgage-calculator">Mortgage calculator</li>
+        </nav>
+    </aside>
+    
+    <!-- Bank managment -->
+    <section id="bank-management">
+        <div id="add-bank">
+            <form>
+                <input type="text" name="name" placeholder="Bank name">
+                <input type="text" name="interest_rate" placeholder="Interest rate">
+                <input type="text" name="max_loan" placeholder="Maximum loan">
+                <input type="text" name="min_down_payment" placeholder="Minimum down payment">
+                <input type="text" name="loan_term" placeholder="Loan term">
+                <button class="ok">OK</button>
+                <button class="cancel">Cancel</button>
+            </form>
+            <input type="button" value="ADD +" hidden>
+        </div>
+        <div id="banks"></div>
+    </section>
+
+    <!-- Mortgage calculator -->
+    <section id="mortgage-calculator" hidden>
         <form>
-            <input type="text" name="name" placeholder="Bank name">
-            <input type="text" name="interest_rate" placeholder="Interest rate">
-            <input type="text" name="max_loan" placeholder="Maximum loan">
-            <input type="text" name="min_down_payment" placeholder="Minimum down payment">
-            <input type="text" name="loan_term" placeholder="Loan term">
-            <button class="ok">OK</button>
-            <button class="cancel">Cancel</button>
+            <label for="initial-loan">Initial loan</label>
+            <input type="text" name="initial-loan" value="0">
+            <label for="down-payment">Down payment</label>
+            <input type="text" name="down-payment" value="0">
+            <label for="bank">Bank</label>
+            <select name="bank" id="bank-list"></select>
+            <button>Calculate</button>
         </form>
-        <input type="button" value="ADD +" hidden>
-    </div>
-    <div id="banks"></div>
+        <p id="result"></p>
+    </section>
 </body>
 </html>
